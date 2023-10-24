@@ -4,14 +4,127 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: #023047;
+  color: #eaf4ff;
+  background-color: #011e6d;
+  
 }
 
 .expense-tracker h1 {
   font-size: 40px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  font-family:'Arial';
 }
+.expense-tracker h1::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 5px; /* Underline height */
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff; /* Underline color */
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+  
+}
+.expense-tracker h1:hover::after {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.summary {
+  color: #f8f8f8;
+  font-size: medium;
+  font-family:'Arial';
+}
+.balance {
+  color: #f8f8f8;
+  font-size: medium;
+  font-family:'Arial';
+}
+
+.add-transaction {
+  max-width: 300px;
+  margin: 1rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  padding: 1.8rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  
+}
+
+.add-transaction input[type="text"],
+.add-transaction input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.add-transaction input[type="radio"] {
+  display:none;
+  
+  
+}
+
+.add-transaction label.radio-label {
+  display: inline-block;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  color: #232323;
+  text-align: center;
+  text-decoration: none;
+  font-weight:bold;
+
+}
+
+.add-transaction input[type="radio"] + .radio-label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.add-transaction input[type="radio"]:checked + .radio-label::before {
+  background-color: #2079e5;
+}
+
+.add-transaction button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-transaction button:hover {
+  background-color: #006fb8;
+}
+
+
 .expense-tracker button {
   margin-left: 10px;
+  padding: 1rem;
 }
 .profile {
   display: flex;
@@ -45,13 +158,110 @@
   text-decoration: none;
   cursor: pointer;
 }
+/*
+.transactions {
+  background-color: #f9f2a3;
+  margin-left: 10rem;
+  margin-top: 8vh;
+  padding-left: 2rem;
+  width: 80%;
+  height: 60%;
+  overflow: auto;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.transactions h2{
+  font-family:'Arial';
+  font-weight: bold;
+  color: #000000;
+  text-decoration: underline;
+  text-align: center;
+  }
+
+.transactions ul li{
+  font-family:'Arial';
+  text-align: justify;
+  display:block;
+}
+
+.transactions ul li h4 {
+  padding-left: 5vh;
+  text-transform: capitalize;
+  text-align: start;
+}
+.transactions ul li p {
+  text-align:end;
+  padding-right: 10vh;
+  font-weight: bold; 
+}
+
+.transactions ul li p label.label1{
+  text-align:end;
+  display: flexbox;
+  padding-left: 3vh;
+  font-weight: bold;
+  text-align: justify;
+  text-transform: capitalize; 
+}
+*/
 
 .transactions {
-  margin-left: 430px;
-  margin-top: 20px;
-  padding-left: 10px;
-  width: 600px;
-  height: 400px;
+  background-color: #f9f2a3;
+  margin: 8vh 10rem;
+  padding: 2rem;
+  width: 80%;
+  height: 60%;
   overflow: auto;
-  border: 3px solid #023047;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Align text left */
 }
+
+.transactions h2 {
+  font-family: 'Arial';
+  font-weight: bold;
+  color: #000000;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 1rem; /* Add some space between heading and list */
+}
+
+.transactions ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0;
+}
+
+.transactions ul li {
+  font-family: 'Arial';
+  text-align: justify;
+  display: flex; /* Use flexbox for better alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Add space between elements */
+  padding: 1rem 0; /* Add some vertical space between list items */
+  border-bottom: 1px solid #000000; /* Add border between list items */
+}
+
+.transactions ul li h4 {
+  text-transform: capitalize;
+  margin: 0; /* Remove default margin */
+}
+
+.transactions ul li p {
+  margin: 0; /* Remove default margin */
+}
+
+.transactions ul li p .label1 {
+  font-weight: bold;
+  text-transform: capitalize;
+  color: green; /* Default color for transactionType */
+}
+
+.transactions ul li p .label1.expense {
+  color: red; /* Change color for expense transactions */
+}
+
+
+

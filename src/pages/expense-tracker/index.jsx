@@ -60,9 +60,9 @@ export const ExpenseTracker = () => {
                     <input type="text" placeholder="Description" value={description} required onChange={(e) => setDescription(e.target.value)} />
                     <input type="number" placeholder="Amount" value={transactionAmount} required onChange={(e) => setTransactionAmount(e.target.value)} />
                     <input type="radio" id="expense" value="expense" checked={transactionType === "expense"} onChange={(e) => setTransactionType(e.target.value)} />
-                    <label htmlFor="expense"> Expense</label>
+                    <label class="radio-label" htmlFor="expense"> Expense</label>
                     <input type="radio" id="income" value="income" checked={transactionType === "income"} onChange={(e) => setTransactionType(e.target.value)} />
-                    <label htmlFor="income"> Income</label>
+                    <label class="radio-label" htmlFor="income"> Income</label>
 
                     <button type="submit">Add Transaction </button>
                 </form>
@@ -81,7 +81,7 @@ export const ExpenseTracker = () => {
 
 
         <div className="transactions">
-        <h3> Transactions</h3>
+        <h2> Transactions</h2>
         <ul>
           {transactions.map((transaction) => {
             const { description, transactionAmount, transactionType } =
@@ -90,8 +90,8 @@ export const ExpenseTracker = () => {
               <li>
                 <h4> {description} </h4>
                 <p>
-                  ${transactionAmount} •{" "}
-                  <label
+                  ${transactionAmount} • {"  "}
+                  <label class="label1"
                     style={{
                       color: transactionType === "expense" ? "red" : "green",
                     }}
