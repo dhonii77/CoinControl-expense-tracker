@@ -3,6 +3,22 @@ an expense tracker is a software or application that helps to keep an accurate
 record of your money inflow and outflow. Many people in India live on a fixed income, 
 and they find that towards the end of the month they don't have sufficient money to meet their needs.
 
+An expense tracker is a software or application that helps you keep track of your money inflow and outflow. It can also be called an expense manager or money manager. 
+Expense trackers can help you: 
+Record and understand your spendings
+Identify unnecessary or excessive expenses
+Analyze where your money goes
+Devise strategies to cut down unnecessary costs
+Simplify financial management
+Improve budgeting
+Ensure effective control over spending habits
+Budget your money
+
+Expense trackers can often sync with bank accounts or credit cards. They can include: 
+All your spending
+Your income from different sources, like sales and events
+Recurring payments like rent or utilities
+Non-recurring payments
 
 # Getting Started with Create React App
 
